@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import Api from "../../GetApi";
 import logo from '../../images/logo.png'
 import '../login/login.css'
 
@@ -8,6 +9,7 @@ const LoginForm = () => {
   
     function onSubmit(data) {
       console.log("Data submitted: ", data);
+      Api()
     }
 
     return <div className="dad_container">
@@ -23,7 +25,7 @@ const LoginForm = () => {
                 <h1 className='text_login'> Login</h1>
                 <form onSubmit={handleSubmit(onSubmit)} autoComplete="nope">
                     <div className="user-login_form">
-                        <input id="email" type="text" name="email"
+                        <input id="email_login" type="text" name="email"
                             autoComplete="off" placeholder="E-mail" ref={register({
                                 pattern: {
                                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
@@ -34,7 +36,7 @@ const LoginForm = () => {
                         {errors.email && <p className="error">{errors.email.message}</p>}
                     </div>
                     <div className="user-login_form">
-                        <input id="password" type="password" name="password"
+                        <input id="password_login" type="password" name="password"
                             placeholder="Senha"  ref={register({
                                 pattern: {
                                     value: /\w{5,}/,

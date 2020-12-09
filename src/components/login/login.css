@@ -50,7 +50,7 @@ p {
     margin-bottom: 17px;
 }
 
-input#email {
+input#email_login {
     border-radius: 16px;
     padding: 7px 24px;
     outline: 0;
@@ -58,7 +58,7 @@ input#email {
     box-shadow: 0px 2px 7px 0px rgba(184,175,184,1);
 }
 
-input#password {
+input#password_login {
     border-radius: 16px;
     padding: 7px 24px;
     outline: 0;

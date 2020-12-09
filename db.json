@@ -1,9 +1,161 @@
 {
   "usuarios": [
     {
-      "Animal": "Cachorro",
-      "Flor": "Branca",
-      "id": 2
+      "nome": "Alexandre Junior",
+      "cpf": "12345678985",
+      "email": "alee_bar@email.com",
+      "cidade": "São Paulo",
+      "id": 4
+    },
+    {
+      "nome": "Juliana",
+      "cpf": "12345678945",
+      "email": "juu_bar@email.com",
+      "cidade": "Suzano",
+      "id": 5
+    },
+    {
+      "nome": "Darwin",
+      "cpf": "12345678946",
+      "email": "darwin_bar@email.com",
+      "cidade": "Suzano02",
+      "id": 6
+    },
+    {
+      "nome": "Fabiana",
+      "cpf": "12345678941",
+      "email": "fabi_bar@email.com",
+      "cidade": "Consorcio",
+      "id": 7
+    },
+    {
+      "nome": "juliana",
+      "cpf": "457.020.538-00",
+      "email": "silva.junia96@gmail.com",
+      "password": "1514251",
+      "cep": "04437090",
+      "rua": "Rua Pascoal da Ribeira",
+      "numero": "398",
+      "bairro": "Jardim Consórcio",
+      "cidade": "São Paulo",
+      "id": 8
+    },
+    {
+      "nome": "Wanderlei Cuencas",
+      "cpf": "457.020.538-01",
+      "email": "silva.junia96@gmail.com",
+      "password": "rfewfweFEWF",
+      "cep": "04437091",
+      "numero": "",
+      "id": 9
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "cep": "",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "id": 10
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "cep": "",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "id": 11
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "cep": "",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "id": 12
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "cep": "",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "id": 13
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "cep": "",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "id": 14
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "cep": "",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "id": 15
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "cep": "",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "id": 16
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "cep": "",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "id": 17
+    },
+    {
+      "nome": "",
+      "cpf": "",
+      "email": "",
+      "password": "",
+      "cep": "",
+      "rua": "",
+      "numero": "",
+      "bairro": "",
+      "cidade": "",
+      "id": 18
     }
   ]
 }

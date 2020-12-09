@@ -1,0 +1,37 @@
+.datatable {
+    display: flex;
+    flex-direction: column;
+}
+
+.datatable .row, .datatable .header {
+    display: flex;
+    flex-direction: row;
+}
+
+.datatable .row div, .datatable .header div{
+    margin: 10px 0px;
+    width: 20%;
+    overflow-wrap: break-word;
+}
+
+.datatable .header div {
+    background-color: #926cfa;
+    color: white;
+}
+
+.button_logout {
+    cursor: pointer;
+    color: white;
+    padding: 5px 26px;
+    background-color: #926cfa;
+    border: none;
+    box-shadow: 0px 2px 7px 0px rgba(184,175,184,1);
+    border-radius: 17px;
+    outline: 0;
+    margin-left: 70px;
+}
+
+.container_search {
+    display: flex;
+    flex-direction: row;
+}
