@@ -57,7 +57,7 @@ function EditUser (props){
             GetOneUser(param.id).then(res => {
                setFormField(res)
             })
-        }, [])
+        }, [param.id])
 
        console.log(formField.nome)
 
