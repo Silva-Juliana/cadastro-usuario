@@ -12,8 +12,7 @@ function getUsers(query = ''){
     return fetch(url , { method: 'GET'}) 
         .then(res=> {
             return res.json()
-        })
-       
+        })  
 }
 
 export default getUsers;

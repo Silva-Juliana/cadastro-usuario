@@ -2,20 +2,23 @@ import React, { useEffect, useState } from 'react'
 import getUsers from '../../GetApi'
 import DelUser from '../DelUser'
 import '../list/list.css'
+import {HeaderList} from '../../Header'
+import { Link} from "react-router-dom";
+
 
 function List(){
+    
 
    const [users, setUsers] = useState([])
    const [query, setQuery] = useState('')
 
    const getUsersLis = () => {
-    getUsers(query)
-        .then(res => {
-            console.log(res)
-            setUsers(res)
-        })
-
-   }
+        getUsers(query)
+            .then(res => {
+                console.log(res)
+                setUsers(res)
+            })
+    }
 
     useEffect(() => {
         getUsers()
@@ -25,26 +28,22 @@ function List(){
             })
     }, [])
 
-
-    console.log(getUsers)
-    return <>
-        <div> 
+    return( <>
+        <HeaderList/>
+        <div className='list_user'> 
             Listagem de usuários
-            <button className="button_logout">Logout</button>
         </div>
         <br/>
         <br/>
         <div className="container_search">
-            <label htmlFor="search">Pesquisar:</label>
-            <input type='text' id="search" name="search" onChange={(e) => {setQuery(e.target.value)}}/>
-            <button onClick={getUsersLis}>Buscar</button>
+            <input type='text' id="search" name="search" placeholder="Pesquisar Usuário" onChange={(e) => {setQuery(e.target.value)}}/>
+            <button className='ok' onClick={getUsersLis}>Ok</button>
         </div>
-        <button>Novo Usuario</button>
         <div className="datatable">
             <div className="header">
                 <div>Nome</div>
-                <div>Cpf</div>
-                <div>Email</div>
+                <div>CPF</div>
+                <div>E-mail</div>
                 <div>Cidade</div>
                 <div>Ações</div>
             </div>
@@ -56,7 +55,7 @@ function List(){
                         <div>{props.email}</div>
                         <div>{props.cidade}</div>
                         <div>
-                            <button onClick={() => {
+                            <button className="button_delete" onClick={() => {
                                 DelUser(props.id)
                                     .then(() => {
                                         getUsers()
@@ -66,14 +65,14 @@ function List(){
                                             })
                                     })}
                             }>Excluir</button>
-                            <button>Editar</button>
+                            <Link className="button_edit" to={`/editUser/${props.id}`}>Editar</Link>
                         </div>
                     </div>
                 )
                 })
             }
         </div>
-    </>
+    </>)
 }
 
 export default List;

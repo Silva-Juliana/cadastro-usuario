@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Login from './components/login/Login'
-import NewUser from "./components/NewUser/NewUser"
 import List from "./components/list/List"
 import Form from "./components/form/Form"
-import Formadd from "./components/form/editUser/edituser"
+import EditUser from "./components/form/editUser/Edituser"
+import ProtectRoute from "./ProtectRoute"
 
 
 export default function Routes() {
@@ -14,17 +14,10 @@ export default function Routes() {
                 <Route path="/login">
                     <Login/>
                 </Route>
-                <Route path="/newuser">
-                    <NewUser/>
-                </Route>
-                <Route path="/list">
-                    <List/>
-                </Route>
-                <Route path="/form">
-                    <Form/>
-                </Route>
-                <Route path="/formadd">
-                    <Formadd/>
+                <Route>
+                    <ProtectRoute path="/list" component={List}/>
+                    <ProtectRoute path="/form" component={Form}/>
+                    <ProtectRoute path="/editUser/:id" component={EditUser}/>
                 </Route>
             </Switch>
         </BrowserRouter>

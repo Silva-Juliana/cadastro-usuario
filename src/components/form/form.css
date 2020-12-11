@@ -20,7 +20,7 @@ form {
     background: linear-gradient(90deg, #926cfa 0%, #281854 100%);
     align-items: center;
     justify-content: center;
-
+    flex-direction: column;
 }
 
 h2 {
@@ -37,4 +37,25 @@ h2 {
     border-radius: 11px;
     background-color: white;
     padding: 3%;
+}
+
+.box_header {
+    background: linear-gradient(90deg, #926cfa 0%, #281854 100%);
+}
+
+.register_button{
+    cursor: pointer;
+    color: white;
+    padding: 4px 32px;
+    background-color: #926cfa;
+    border: none;
+    box-shadow: 0px 2px 7px 0px rgba(184,175,184,1);
+    border-radius: 7px;
+    outline: 0;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+input.input_form {
+    margin: 1%;
 }

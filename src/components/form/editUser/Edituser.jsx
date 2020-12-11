@@ -1,16 +1,18 @@
-import React, { useState } from 'react'
-import '../form/form.css'
-import apiForm from '../form/ApiForm'
-import addUser from '../form/apiFormAdd'
+import React, { useEffect, useState } from 'react'
+import "../form.css"
+import apiForm from '../ApiForm'
+import editUser from '../editUser/editUserApi'
+import { useParams } from 'react-router-dom'
+import GetOneUser from '../../../GetOneUser'
 import { useHistory } from 'react-router-dom'
-import {Masks, MasksCep} from '../../mask';
-import { HeaderForm } from '../../Header'
+import {HeaderForm} from '../../../Header'
 
 
-function Form(props){
+function EditUser (props){
     let history = useHistory()
-    let typeForm = 'Cadastrar'
- 
+    let typeForm = "Editar"
+
+    const param = useParams();
     
     const [formField, setFormField] = useState({
         nome:'',
@@ -36,23 +38,10 @@ function Form(props){
             })
        }
 
-        const applyMask = (target) => {
-            let value = target.value;
-
-            if (target.name === 'cpf') {
-               value = Masks.cpf(value)  
-
-            }if (target.name === 'cep') {
-                value = MasksCep.cep(value)      
-             }
-
-            return value;
-        }
-
        const upDataField = (e) => {
           setFormField({
               ...formField,
-              [e.target.name]: applyMask(e.target),
+              [e.target.name]: e.target.value
           })
 
        }
@@ -60,13 +49,19 @@ function Form(props){
        const createUser = (e) => {
             e.preventDefault()
             console.log(formField)
-            addUser(formField)
+            editUser(param.id, formField)
             history.push('/list') 
        }
 
-       
+       useEffect(() => {
+            GetOneUser(param.id).then(res => {
+               setFormField(res)
+            })
+        }, [])
 
-    return (<>
+       console.log(formField.nome)
+
+    return( <> 
         <div className='box_header'>
             <HeaderForm/>
         </div>
@@ -81,14 +76,9 @@ function Form(props){
                         <input onChange={upDataField} value={formField.nome} type="text" className='input_form' name='nome' placeholder="Nome"/>
                         <input onChange={upDataField} value={formField.cpf} type="text" className='input_form' name='cpf' placeholder="CPF"/>
                     </div>
-                    <input onChange={upDataField} value={formField.email} 
-                        type="email" className='input_form' name='email'
-                        placeholder="E-mail"
-                    />
-                    <input onChange={upDataField} value={formField.password}
-                        type="password" className='input_form' name='password' 
-                        placeholder="Senha"
-                    />
+                    <input onChange={upDataField} value={formField.email} type="email" className='input_form' name='email' placeholder="E-mail"/>
+                    <input onChange={upDataField} value={formField.password} type="password" className='input_form' name='password' placeholder="Senha"/>
+
                     <div> 
                         <h2>Endereço:</h2>
                     </div>
@@ -97,11 +87,11 @@ function Form(props){
                     <input onChange={upDataField} value={formField.numero} type="text" className='input_form' name='numero' placeholder="Número"/>
                     <input onChange={upDataField} value={formField.bairro} type="text" className='input_form' name='bairro' placeholder="Bairro"/>
                     <input onChange={upDataField} value={formField.cidade} type="text" className='input_form' name='cidade' placeholder="Cidade"/>
-                    <button className="register_button"  type='submit'>{typeForm}</button>
+                    <button className="register_button" type='submit'>{typeForm}</button>
                 </form>
             </div>
         </div>
     </>)
 }
 
-export default Form;
+export default EditUser;
